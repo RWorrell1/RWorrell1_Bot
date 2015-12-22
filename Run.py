@@ -21,4 +21,5 @@ while True:
 			user = getUser(line)
 			message = getMessage(line)
 			print user + " typed :" + message
-                if message "!donate"  
+                if "!donate" in message:
+                    sendMessage(s, "")
