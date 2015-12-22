@@ -24,7 +24,7 @@ while True:
 			print user + " typed :" + message
             
                 if "!donate" in message:
-                    sendMessage(s, "You Can Donate here http://www.streamtip.com/t/rworrell1 Min: $3 " + user)
+                    sendMessage(s, "You Can Donate here http://www.streamtip.com/t/rworrell1 Min: $3 ")
                     
                 if "hi" in message:
                     sendMessage(s, "Welcome To The Stream HeyGuys ")
@@ -33,28 +33,26 @@ while True:
                     sendMessage(s, "Welcome To The Stream HeyGuys ")
                     
                 if "!crew" in message:
-                    sendMessage(s, "Join my crew at socialclub.rockstargames.com/crew/rworrell1")
+                    sendMessage(s, "Join my crew at socialclub.rockstargames.com/crew/rworrell1 ")
                     
                 if "!email" in message:
-                    sendMessage(s, "email me at rworrell1gaming@gmail.com")
+                    sendMessage(s, "email me at rworrell1gaming@gmail.com ")
                     
                 if "!psn" in message:
-                    sendMessage(s, "PSN=ryandude21")
+                    sendMessage(s, "psn=ryandude21 ")
                     
                 if "!site" in message:
-                    sendMessage(s, "My site is rworrell1.weebly.com")
+                    sendMessage(s, "My site is rworrell1.weebly.com ")
                     
                 if "!steam" in message:
-                    sendMessage(s, "NightTimeBurialMan")
+                    sendMessage(s, "NightTimeBurialMan ")
                     
                 #if "!sub" in message:
-                    #sendMessage(s, "Sorry i dont have a sub button")
+                    #sendMessage(s, "Sorry i dont have a sub button ")
                     
                 if "!twitter" in message:
-                    sendMessage(s, "twitter.com/rworrell1gaming")
+                    sendMessage(s, "twitter.com/rworrell1gaming ")
                     
                 if "!commands" in message:
-                    sendMessage(s, "!donate, !crew, !email, !psn, !site, !steam")
+                    sendMessage(s, "!donate, !crew, !email, !psn, !site, !steam ")
                     
-                if "ass" in message:
-                    sendMessage(s, "/timeout " + user)
