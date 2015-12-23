@@ -16,43 +16,54 @@ while True:
 		
 		for line in temp:
 			print(line)
-			if "PING" in line:
-				s.send(line.replace("PING", "PONG"))
+			if "PING tmi.twitch.tv" in line:
+				s.send("PONG tmi.twitch.tv")
 				break
 			user = getUser(line)
 			message = getMessage(line)
-			print user + " typed :" + message
             
                 if "!donate" in message:
-                    sendMessage(s, "You Can Donate here http://www.streamtip.com/t/rworrell1 Min: $3 ")
+                    sendMessage(s, user + " You Can Donate here http://www.streamtip.com/t/rworrell1 Min: $3")
                     
                 if "hi" in message:
-                    sendMessage(s, "Welcome To The Stream HeyGuys ")
+                    sendMessage(s, user + " Welcome To The Stream HeyGuys ")
                     
                 if "hey" in message:
-                    sendMessage(s, "Welcome To The Stream HeyGuys ")
+                    sendMessage(s, user + " Welcome To The Stream HeyGuys ")
                     
                 if "!crew" in message:
-                    sendMessage(s, "Join my crew at socialclub.rockstargames.com/crew/rworrell1 ")
+                    sendMessage(s, user + " Join my crew at socialclub.rockstargames.com/crew/rworrell1")
                     
                 if "!email" in message:
-                    sendMessage(s, "email me at rworrell1gaming@gmail.com ")
+                    sendMessage(s, user + " email me at rworrell1gaming@gmail.com")
                     
                 if "!psn" in message:
-                    sendMessage(s, "psn=ryandude21 ")
+                    sendMessage(s, user + " My PSN Is ryandude21")
                     
                 if "!site" in message:
-                    sendMessage(s, "My site is rworrell1.weebly.com ")
+                    sendMessage(s, user + " My site is rworrell1.weebly.com")
                     
                 if "!steam" in message:
-                    sendMessage(s, "NightTimeBurialMan ")
+                    sendMessage(s, user + " My Steam Is NightTimeBurialMan")
                     
                 #if "!sub" in message:
                     #sendMessage(s, "Sorry i dont have a sub button ")
                     
                 if "!twitter" in message:
-                    sendMessage(s, "twitter.com/rworrell1gaming ")
+                    sendMessage(s, user + " twitter.com/rworrell1gaming")
                     
                 if "!commands" in message:
-                    sendMessage(s, "!donate, !crew, !email, !psn, !site, !steam ")
+                    sendMessage(s, user + " The Commands Are !donate, !crew, !email, !psn, !site, !steam ")
                     
+                if ".com" in message:
+                     sendMessage(s, ".timeout " + user)
+                        
+                if ".net" in message:
+                     sendMessage(s, ".timeout " + user)
+                        
+                if ".gov" in message:
+                     sendMessage(s, ".timeout " + user)
+                
+                if ".edu" in message:
+                     sendMessage(s, ".timeout " + user)
+                        
