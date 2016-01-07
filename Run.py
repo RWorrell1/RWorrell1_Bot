@@ -2,12 +2,11 @@ import string
 from Read import getUser, getMessage
 from Socket import openSocket, sendMessage
 from Initialize import joinRoom
-
+import urllib2
 
 s = openSocket()
 joinRoom(s)
 readbuffer = ""
-
 
 while True:
 		readbuffer = readbuffer + s.recv(2048)
@@ -16,14 +15,18 @@ while True:
 		
 		for line in temp:
 			print(line)
-			if "PING tmi.twitch.tv" in line:
-				s.send("PONG tmi.twitch.tv")
-				break
-			user = getUser(line)
-			message = getMessage(line)
+			if "PING" in line:
+				s.send("PONG " + "\r\n")
+                print("Pong")
+                
+                user = getUser(line)
+                message = getMessage(line)
             
-                if "!donate" in message:
+            #start of Commands
+                if "!donate" + "user-type=mod" in message:
                     sendMessage(s, user + " You Can Donate here http://www.streamtip.com/t/rworrell1 Min: $3")
+                else:
+                        sendMessage(s, user + " That Commands is For Mods Only")
                     
                 if "hi" in message:
                     sendMessage(s, user + " Welcome To The Stream HeyGuys ")
@@ -53,17 +56,43 @@ while True:
                     sendMessage(s, user + " twitter.com/rworrell1gaming")
                     
                 if "!commands" in message:
-                    sendMessage(s, user + " The Commands Are !donate, !crew, !email, !psn, !site, !steam ")
+                    sendMessage(s, user + " The Commands Are !donate, !crew, !email, !psn, !site, !steam")
+            #End Of Commands
                     
+            #Start Of Timeouts And Bans
                 if ".com" in message:
-                     sendMessage(s, ".timeout " + user)
+                     sendMessage(s, ".timeout " + user + " 180")
                         
                 if ".net" in message:
-                     sendMessage(s, ".timeout " + user)
+                     sendMessage(s, ".timeout " + user + " 180")
                         
                 if ".gov" in message:
-                     sendMessage(s, ".timeout " + user)
+                     sendMessage(s, ".timeout " + user + " 180")
                 
                 if ".edu" in message:
-                     sendMessage(s, ".timeout " + user)
+                     sendMessage(s, ".timeout " + user + " 180")
                         
+                if "porn" in message:
+                    sendMessage(s, ".ban " + user)
+                    
+                if "Porn" in message:
+                    sendMessage(s, ".ban " + user)
+                    
+                if "pornhub.com" in message:
+                    sendMessage(s, ".ban " + user)
+                    
+                if "porn.com" in message:
+                    sendMessage(s, ".ban " + user)
+                    
+                if "youporn.com" in message:
+                    sendMessage(s, ".ban " + user)
+                    
+                if "abdulaporn.com" in message:
+                    sendMesssage(s, ".ban " + user)
+                    
+                if "redtube.com" in message:
+                    sendMesssage(s, ".ban " + user)
+                    
+                if "dinotube.com" in message:
+                    sendMesssage(s, ".ban " + user)
+            #End Of Timeouts And Bans
